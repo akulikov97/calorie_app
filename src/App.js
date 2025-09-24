@@ -1,25 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import {getNutritionData} from './api.js';
 
-function App() {
+function handleClick() {
+  alert(`Are you sure you want to submit?`);
+}
+function fetchData() {
+  getNutritionData().then(data => {return data});
+}
+function inputs() {
+  fetchData();
+  return (
+    <form onSubmit={handleClick}>
+      <div>Food:</div>
+        <input type="searchBar" placeholder="Input your food" />
+      <div>Goal Weight:</div>
+      <input type="goalWeight" placeholder="Input your goal weight" />
+      <div className='submitButton'>
+        <button type="submit">Submit</button>
+      </div>
+    </form>);
+}
+
+
+function CalorieCounter() {
+  const users = [
+    { id: 1, name: 'Anya', age: 30 },
+    { id: 2, name: 'Vera', age: 25 },
+    { id: 3, name: 'Sid', age: 20 },
+  ];
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Calorie Counter
       </header>
+      <div className="App-body">
+        {inputs()}
+      </div>
+      <div className="Users">
+        <ul>
+          {users.map((user) => (
+            <li key={user.id}>
+              Name: {user.name} Age: {user.age}.
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default CalorieCounter;
