@@ -1,7 +1,4 @@
-var query = `1lb brisket and fries`
-
-// Better approach: export an async function
-export const getNutritionData = async (searchQuery = query) => {
+export const getNutritionData = async (searchQuery) => {
   const url = 'https://api.api-ninjas.com/v1/nutrition?query=' + searchQuery;
   
   try {
@@ -14,7 +11,7 @@ export const getNutritionData = async (searchQuery = query) => {
     }
     
     const data = await response.json();
-    console.log('API Response:', data);
+    console.log(data);
     return data[0].fat_total_g; // Return the fat content
 
   } catch (error) {

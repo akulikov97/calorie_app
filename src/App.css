@@ -11,7 +11,7 @@
 
 .App-header {
   background-color: #282c34;
-  padding: 40px 0 20px 0;
+  padding: 20px 0 10px 0;
   font-size: calc(12px + 2vmin);
   color: white;
 }
@@ -23,17 +23,28 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: white
+  color: white;
 }
 
 .submitButton {
   margin-top: 20px;
 }
 
-.Users {
+.Mantras ul li
+{
   color: white;
+  padding: 5px 0px; 
 }
 
-#goalWeight {
-  margin-top: 20px;
+.Users {
+  color:white;
+}
+
+.goalWeight {
+  margin-top: 10px;
+}
+
+.Food, .goalWeight {
+  color: white;
+  margin-bottom: 10px;
 }
